@@ -1,14 +1,7 @@
 #include <iostream>
+#include "Rational.h"
+
 using namespace std;
-
-class Rational {
-public:
-	int numerator;
-	int denominator;
-
-	void print();
-	void multiply(Rational num);
-};
 
 void Rational::print()
 {
@@ -33,6 +26,9 @@ int main()
 	num1.multiply(num2);
 	cout << "num1*mum2 = ";
 	num1.print();
-
+	sayHello();
+	cout << "now twice:\n";
+	sayHelloTwice();
+	f();
 	return 0;
 }
