@@ -2,7 +2,11 @@
 class Student
 {
 //private:
+#if 0
+	string name;
+#else
 	char name[20];
+#endif
 	int grade;
 	int marks[10];
 	float average;
