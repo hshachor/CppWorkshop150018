@@ -3,9 +3,6 @@
 #include <ctime>
 using namespace std;
 
-
-
-
 Vector::Vector(int _size)
 {
     size = _size;
@@ -14,6 +11,7 @@ Vector::Vector(int _size)
     for (int i = 0; i < size; i++)
         numbers[i] = rand() % 100;
 }
+
 Vector::Vector(int val, int _size)
 {
     size = _size;
@@ -21,6 +19,7 @@ Vector::Vector(int val, int _size)
     for (int i = 0; i < size; i++)
         numbers[i] = val;
 }
+
 Vector::Vector(int* vec, int _size)
 {
     size = _size;
@@ -32,8 +31,11 @@ Vector::Vector(int* vec, int _size)
 Vector::~Vector()
 {
     cout << " dtor" << endl;
-    if (size)  delete[] numbers;
+    if (size) {
+        delete[] numbers;
+    }
 }
+
 Vector::Vector(const Vector& vec)
 {
     size = vec.size;

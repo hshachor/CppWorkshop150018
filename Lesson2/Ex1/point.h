@@ -1,18 +1,16 @@
 #pragma once
 //Example Channi Nadler
-#include <iostream>
-using namespace std;
-class point
+class Point
 {
 private:
    int x = 0;
    int y;
 public:
    //default constructor
-   point() {y=0;}
-   point(int, int);
+   Point() {y=0;}
+   Point(int, int);
    //copy constructor
-   point(const point& p);
+   Point(const Point& p);
    int getX() const{return x;}
    int getY() const{return y;}
    void print();

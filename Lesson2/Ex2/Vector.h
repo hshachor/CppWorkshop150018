@@ -1,6 +1,5 @@
 #pragma once
 //Example Channi Nadler
-using namespace std;
 class Vector
 {
 private:

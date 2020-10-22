@@ -1,11 +1,11 @@
-#include "point.h"
+#include "Point.h"
 #include <iostream>
 using namespace std;
 
 
 void main()
 {
-   point p1,
+   Point p1,
             p2(2,8),
             p3(p2);
    cout<<"p1: ";	p1.print();

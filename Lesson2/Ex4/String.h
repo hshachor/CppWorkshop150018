@@ -1,6 +1,4 @@
 #pragma once
-#include <iostream>
-using namespace std;
 
 class String 
 {
@@ -12,13 +10,15 @@ public:
 	~String() { delete[] _data; }
 
 	// copy constructor
-	String(const String& s) : String(s._data) { cout << "cctor\n"; }
+	String(const String& s);
 
 	// move constructor
 	String(String&& s);
 
+	// what about assignment?
+
 	int Length() const { return _len; }
 	bool Find(const String& s) const { return strstr(_data, s._data) != nullptr; }
 	
-	void print() { cout << _data << endl; }
+	void print();
 };

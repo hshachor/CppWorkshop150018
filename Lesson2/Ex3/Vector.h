@@ -1,8 +1,5 @@
 #pragma once
 //Example Channi Nadler
-using namespace std;
-#pragma once
-
 class Vector
 {
 private:

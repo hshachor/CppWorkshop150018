@@ -11,11 +11,22 @@ String::String(const char* p)
 	strcpy_s(_data, _len+1, p);
 }
 
+
+// copy constructor
+
+String::String(const String& s) : String(s._data) {
+	cout << "cctor\n";
+}
+
 String::String(String&& s)
 {
 	cout << "move ctor" << endl;
 	_data = s._data; // steal (dont copy) rvalue's data
 	_len = s._len;
-	s._data = nullptr;
+	s._data = nullptr; 
+}
+
+void String::print() { 
+	cout << _data << endl; 
 }
 
