@@ -2,8 +2,13 @@
 #include <iostream>
 using namespace std;
 
-void main()
+int main()
 {
+	Vector vec1;
+	cout << "vec1: ";
+	vec1.print();
+	return 0;
+	/*
 	int nums[10];
 	for (int i = 0; i < 10; i++)
 		nums[i] = i;
@@ -13,6 +18,6 @@ void main()
 	cout << "\nvec2: ";
 	vec2.print();
 	cout << "\nvec3: ";
-	vec3.print();
+	vec3.print();*/
 }
 

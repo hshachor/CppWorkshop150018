@@ -32,3 +32,11 @@ void Vector::print()
 		cout << numbers[i] << ' ';
 	cout << endl;
 }
+
+Vector::~Vector()
+{
+	cout << " dtor" << endl;
+	if (size) {
+		delete[] numbers;
+	}
+}

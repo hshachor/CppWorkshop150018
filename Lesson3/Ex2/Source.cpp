@@ -11,9 +11,10 @@ int main()
 	Rational r2(3, 4);
 	Rational r3(5, 6);
 	Rational r4(r3);
-	Rational r5 = r4;
-	Rational r6 = r5++;
-	Rational r7 = ++r5;
+	Rational r5 = r4; // 5/6
+	Rational r6 = r5++; // r6:5/6, r5:11/6
+	Rational r7 = ++r5; // r7:17/6, r5:17/6
+	r6 = r7 + r5?
 	cout << "r1:" << r1 << " r2:" << r2 << " r6:" << r6 << "r7:" << r7;
 	return 0;
 
