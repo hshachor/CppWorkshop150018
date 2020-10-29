@@ -22,6 +22,7 @@
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{1D537632-3AD2-45B7-A2A0-4BF6E5DA2C36}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
+    <ProjectName>VectorDtor</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
