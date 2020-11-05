@@ -3,7 +3,10 @@ using namespace std;
 
 class Rational {
 public:
-	Rational(int num, int denom) { numerator = num; denominator = denom; }
+	Rational(int num, int denom) 
+	{ 
+		numerator = num; denominator = denom; 
+	}
 
 	Rational square();
 	void print() { cout << numerator << '/' << denominator << endl; }
