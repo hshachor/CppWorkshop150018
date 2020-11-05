@@ -1,5 +1,6 @@
 #pragma once
 
+// This class represent string object, and handle all allocation without (supposedly) memory leak.
 class String
 {
 private:
@@ -12,14 +13,17 @@ public:
     ~String();
 
     // view function.
-    char* getString() const;
+    const char* getString() const;
+
     // modify function.
     String& operator =(const String&);
 
     // operators
     bool operator==(const String&) const;
-    String  operator+(const String&);
-    String  operator* (int); int length() const;
+    String operator+(const String&) const;
+    String operator* (int) const;
+
+    int length() const;
 
     // print
     void print() const;

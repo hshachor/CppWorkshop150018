@@ -19,7 +19,7 @@ String::~String()
     str = nullptr;
 }
 
-char* String::getString() const
+const char* String::getString() const
 {
     return str;
 }
@@ -37,13 +37,14 @@ void String::setString(const char* s)
 
 String& String::operator=(const String& s)
 {
+    // empty current allocation before new allocation at setString...
     if (str)
         delete[] str;
     setString(s.getString());
     return *this;
 }
 
-String String::operator+(const String& s)
+String String::operator+(const String& s) const
 {
     int sizeI = strlen(str);
     int sizeII = strlen(s.getString());
@@ -54,7 +55,7 @@ String String::operator+(const String& s)
     return x;
 }
 
-String String::operator*(const int num)
+String String::operator*(const int num) const
 {
     char* temp;
     int len = strlen(str);
