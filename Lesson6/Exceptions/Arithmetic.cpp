@@ -27,7 +27,7 @@ int arithmetic(int x, int y, char op)
                 {
                     temp = x * y;
                     if (((x > 0) && (y > 0) && (temp < 0)) || ((x < 0) && (y < 0) && (temp < 0)) ||
-                        ((x > 0) && (y < 0) && (temp > 0)) || ((x > 0) && (y < 0) && (temp > 0)))
+                        ((x > 0) && (y < 0) && (temp > 0)) || ((x < 0) && (y > 0) && (temp > 0)))
                         /* overflow */  throw 3;
                     return temp;
                 } // if   

@@ -11,7 +11,7 @@ int ex5();
 
 int main()
 {
-    return ex3();
+    return ex5();
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

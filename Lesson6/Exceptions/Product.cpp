@@ -10,7 +10,7 @@ void Product::init(char* n, int q, float p)
 {
     if (strlen(n) > 9)
         throw "error: name too long\n";
-    strcpy(name, n);
+    strcpy_s(name, 10, n);
     if (q < 0 || q>100)
         throw q;
     quantity = q;
