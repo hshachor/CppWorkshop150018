@@ -48,8 +48,6 @@ public:
     void removeFirst(); //remove first elemnt from list
     void clear(); //erase list
 
-    //operators
-    friend std::ostream& operator<< (std::ostream& os, List& l);//print elements in  list
 };
 
 #endif
