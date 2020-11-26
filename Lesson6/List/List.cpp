@@ -126,12 +126,3 @@ void List::removeFirst()
         delete p;
     }
 }
-ostream& operator<< (ostream& os, List& l)
-{
-    os << '\t';
-    for (List::Link* p = l.head; p != NULL; p = p->next)
-        os << p->value << '\t';
-    os << endl;
-    return os;
-}
-

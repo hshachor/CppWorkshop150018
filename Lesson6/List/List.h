@@ -10,8 +10,7 @@
 class List
 {
 
-    //protected:
-public:
+protected:
     //--------------------------------------------
     //  inner class link
     //  a single element for the linked List 
@@ -31,8 +30,7 @@ public:
 
     };	//end of class Link
 
-//protected:
-private:
+protected:
     // data field
     Link* head;
 
@@ -50,8 +48,6 @@ public:
     void removeFirst();//remove first elemnt from list
     void clear();//erase list
 
-    //operators
-    friend std::ostream& operator<< (std::ostream& os, List& l);//print elements in  list
 };
 
 #endif
