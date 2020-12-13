@@ -7,7 +7,7 @@ using namespace std;
 bool polindrom(string str)
 {
     stack<char> s;
-    int i = 0;
+    unsigned int i = 0;
     for (; i < str.size() / 2; i++)
         s.push(str[i]);
 

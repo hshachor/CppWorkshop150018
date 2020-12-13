@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void display(char* vecName, vector<int> vec)
+void display(const char* vecName, vector<int> vec)
 {
     cout << vecName << ": ";
     for (auto it = vec.begin(); it != vec.end(); ++it)

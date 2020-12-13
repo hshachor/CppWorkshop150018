@@ -1,27 +1,34 @@
-#include <iostream>
-using namespace std;
+
 const int DEF_CAPACITY = 100;
-template <class T> class Vector
+
+template <class T> 
+class Vector
 {
 protected:
     T* data;
-    int size;//size in use
-    int capacity;//available capacity
+    int size;       //size in use
+    int capacity;   //available capacity
+
 public:
     //constructors
     Vector(int capacity = DEF_CAPACITY);
     Vector(const Vector<T>&);
     ~Vector();
+
     //operations
     Vector<T>& operator = (const Vector<T>&);
+    
     //view and modify
     T& operator [](int index);
+    const T& operator [](int index) const;
+
     int getSize() const;
     int  getCapacity() const;
     void insert(T value);
     void  clear();
     T  delLast();
 };
+
 //=======class Vector implementation=====     
 template <class T>
 Vector<T>::Vector(int Capacity)
@@ -32,6 +39,7 @@ Vector<T>::Vector(int Capacity)
     if (data == nullptr)
         throw "memory allocation problem";
 }
+
 template <class T>
 Vector<T>::Vector(const Vector<T>& vec)
 {
@@ -43,6 +51,7 @@ Vector<T>::Vector(const Vector<T>& vec)
     for (int index = 0; index < size; index++)
         data[index] = vec.data[index];
 }
+
 template <class T>
 Vector<T>::~Vector() {
     if (data != nullptr) {
@@ -50,10 +59,12 @@ Vector<T>::~Vector() {
         data = nullptr;
     }
 }
+
 template <class T> void Vector<T>::clear()
 {
     size = 0;
 }
+
 //view and modify function
 template <class T>
 T& Vector<T>::operator[](int index)
@@ -62,6 +73,16 @@ T& Vector<T>::operator[](int index)
         throw "vector overflow";
     return data[index];
 }
+
+template <class T>
+const T& Vector<T>::operator[](int index) const
+{
+    if (index < 0 || index >= size)
+        throw "vector overflow";
+    return data[index];
+}
+
+
 template <class T>
 Vector<T>& Vector<T>::operator=(const Vector<T>& vec)
 {
@@ -81,11 +102,13 @@ template <class T> int Vector<T>::getSize() const
 {
     return size;
 }
+
 template <class T>
 int Vector<T>::getCapacity() const
 {
     return capacity;
 }
+
 template <class T>
 void Vector<T>::insert(T value)
 {
@@ -94,6 +117,7 @@ void Vector<T>::insert(T value)
     data[size] = value;
     size++;
 }
+
 template <class T> T Vector<T>::delLast()
 {
     if (size < 0)
