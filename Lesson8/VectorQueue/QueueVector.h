@@ -1,5 +1,4 @@
 #pragma once
-#include "Vector.h"
 #include"Queue.h"
 
 //-------------------------------------------------------
@@ -15,14 +14,15 @@ public:
     virtual ~QueueVector() {}
 
     // implement Queue protocol
-    void clear();
-    int dequeue();
-    void enqueue(int value);
-    int front() const;
-    bool isEmpty() const;
+    void clear() override;
+    int dequeue() override;
+    void enqueue(int value) override;
+    int front() const override;
+    bool isEmpty() const override;
 
 private:
-    Vector data;
+    int * data;
+    int capacity;
     int nextSlot;
     int firstUse;
 };

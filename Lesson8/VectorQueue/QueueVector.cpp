@@ -1,25 +1,29 @@
 #include "QueueVector.h"
+#include <cstring>
 
 //== class QueueVector implementation ==
 
 QueueVector::QueueVector(int size)
-    : data(size + 1)	//one extra slot	
 {
+    capacity = size + 1;
+    data = new int[capacity];
     clear();
 }
 
-QueueVector::QueueVector(const QueueVector& v)
-    : data(v.data), nextSlot(v.nextSlot),
-    firstUse(v.firstUse)
+QueueVector::QueueVector(const QueueVector& v) :
+    data(new int[v.capacity]), capacity(v.capacity),
+    nextSlot(v.nextSlot), firstUse(v.firstUse)
 {
-    // no further initialization
+    if (data == nullptr) {
+        throw "Memory allocation failure";
+    }
+    memcpy(data, v.data, capacity * sizeof(data[0]));
 }
 
 void QueueVector::clear()
 {
     nextSlot = 0;
     firstUse = 0;
-    data.clear();
 }
 
 int QueueVector::dequeue()
@@ -27,20 +31,17 @@ int QueueVector::dequeue()
     // can not dequeue from an empty queue
     if (isEmpty()) throw "Queue is empty";
     int dataloc = firstUse;
-    ++firstUse %= data.getCapacity();
+    ++firstUse %= capacity;
     return data[dataloc];
 }
 
 void QueueVector::enqueue(int val)
 {
     // make sure Queue has not overflowed
-    if ((nextSlot + 1) % data.getCapacity() == firstUse)
+    if ((nextSlot + 1) % capacity == firstUse)
         throw "the Queue is full";
-    if (data.getSize() < data.getCapacity())
-        data.insert(val);
-    else
-        data[nextSlot] = val;
-    ++nextSlot %= data.getCapacity();
+    data[nextSlot] = val;
+    ++nextSlot %= capacity;
 }
 
 int QueueVector::front() const
